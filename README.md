@@ -1,4 +1,4 @@
-# \<animation-snow>
+# \<animation-snow> [![npm-package](https://img.shields.io/badge/npmjs-package-red)](https://www.npmjs.com/package/animation-snow) [![github](https://img.shields.io/badge/github-repository-green)](https://github.com/manu/animation-snow) [![codepen-example](https://img.shields.io/badge/codepen-example-black)](https://codepen.io/manufosela/pen/oNzMrXW)
 
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
