@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <title>animation-snow demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script type="module" src="../animation-snow.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Basic animation-snow Demo</h1>
+        <nav>
+          <a href="https://github.com/manufosela/animation-snow" title="github public repository">
+            <img src="https://img.shields.io/badge/github-repository-green" alt="github" />
+          </a>
+          <a href="https://www.npmjs.com/package/animation-snow" title="npm package animation-snow">
+            <img src="https://img.shields.io/badge/npmjs-package-red" alt="npm-package" />
+          </a>
+        </nav>
+      </header>
+      <aside class="blocks">
+        <pre class="block code">
+          <h3>Example</h3>
+          <code>
+            &lt;animation-snow&gt;&lt;/animation-snow&gt;
+          </code>
+        </pre>
+        <pre class="block attributes">
+          <h3>Attributes</h3>
+          <ul>
+            <li>property1 (String [default Value])</li>
+            <li>property2 (Number) [default Value]</li>
+          </ul>
+          <h3>Events</h3>
+          <ul>
+            <li>web-component_event-name-1</li>
+            <li>web-component_event-name-2</li>
+          </ul>
+          <p class="note">
+            NOTE: Events must send its node id into 
+            detail CustomEvent
+          </p>
+        </pre>
+      </aside>
+
+      <main>
+        <div id="example1" class="block">
+          <fieldset>
+            <div>
+              <h3>Example 1 - Default snow density (40)</h3>
+              <p>Click buttons to dispatch events to start/Stop snow</p>
+            </div>
+            <button id="startSnowBtn1">animation-snow-start-snow</button>
+            <button id="stopSnowBtn1">animation-snow-stop-snow</button>
+          </fieldset>
+          <animation-snow id="animation-snow-1"></animation-snow>
+        </div>
+        <div id="example2" class="block">
+          <fieldset>
+            <div>
+              <h3>Example 2 - Snow density 120</h3>
+              <p>Click buttons to dispatch events to start/Stop snow</p>
+            </div>
+            <button id="startSnowBtn2">animation-snow-start-snow</button>
+            <button id="stopSnowBtn2">animation-snow-stop-snow</button>
+          </fieldset>
+          <animation-snow id="animation-snow-2" snowflakes-density="120"></animation-snow>
+        </div>
+
+      </main>
+      
+      <footer>developed by <b>manufosela</b></footer>
+    </div>
+
+    <script>
+      function init() {
+        document.getElementById('startSnowBtn1').addEventListener('click', () => {
+          const detail = {detail:{id: 'animation-snow-1'}};
+          const animationSnowStartSnowEvent = new CustomEvent('animation-snow-start-snow', detail);
+          document.dispatchEvent(animationSnowStartSnowEvent);
+        });
+        document.getElementById('stopSnowBtn1').addEventListener('click', () => {
+          const detail = {detail:{id: 'animation-snow-1'}};
+          const animationSnowStopSnowEvent = new CustomEvent('animation-snow-stop-snow', detail);
+          document.dispatchEvent(animationSnowStopSnowEvent);
+        });
+        document.getElementById('startSnowBtn2').addEventListener('click', () => {
+          const detail = {detail:{id: 'animation-snow-2'}};
+          const animationSnowStartSnowEvent = new CustomEvent('animation-snow-start-snow', detail);
+          document.dispatchEvent(animationSnowStartSnowEvent);
+        });
+        document.getElementById('stopSnowBtn2').addEventListener('click', () => {
+          const detail = {detail:{id: 'animation-snow-2'}};
+          const animationSnowStopSnowEvent = new CustomEvent('animation-snow-stop-snow', detail);
+          document.dispatchEvent(animationSnowStopSnowEvent);
+        });
+      }
+      window.onload = init();
+    </script>
+  </body>
+</html>
